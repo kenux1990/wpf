@@ -83,5 +83,10 @@
       <Uri>https://github.com/dotnet/corefx</Uri>
       <Sha>189766719a059512a515d488efc5c65c7abf0650</Sha>
     </Dependency>
+    <Dependency Name="Microsoft.DotNet.ApiCompat" Version="1.0.0-beta.19270.1">
+      <Uri>https://www.github.com/dotnet/arcade</Uri>
+      <Sha>
+      </Sha>
+    </Dependency>
   </ToolsetDependencies>
 </Dependencies>
