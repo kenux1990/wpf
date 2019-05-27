@@ -10,9 +10,9 @@
     </RestoreSources>
 
     <IncludeDotNetCli>true</IncludeDotNetCli>
-    <DotNetCliPackageType>sdk</DotNetCliPackageType>
+    <DotNetCliPackageType>runtime</DotNetCliPackageType>
     <!-- Set to match global.json.tools.dotnet by pre-build.ps1 -->
-    <DotNetCliVersion>$(DotNetCliVersion)</DotNetCliVersion>
+    <DotNetCliVersion>$(MicrosoftNETCoreAppVersion)</DotNetCliVersion>
     
     <EnableXUnitReporter>true</EnableXUnitReporter>
     <EnableAzurePipelinesReporter>true</EnableAzurePipelinesReporter>
