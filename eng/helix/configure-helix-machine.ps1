@@ -2,7 +2,7 @@
 $dotnetLocation=Join-Path (Split-Path -Parent $script:MyInvocation.MyCommand.Path) "dotnet"
 
 # Set both DOTNET_ROOT environment variables. This is necessary, even for x64 runs.
-Set-Variable -Name "DOTNET_ROOT" -Value $dotnetLocation
+$env:DOTNET_ROOT=$dotnetLocation
 Set-Variable -Name "DOTNET_ROOT(x86)" -Value $dotnetLocation
 
 $runtimes = dotnet --list-runtimes
