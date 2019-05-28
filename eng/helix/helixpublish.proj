@@ -30,6 +30,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+     <HelixTargetQueue Include="Windows.10.Amd64.Open">
+      <AdditionalProperties>Platform=x64</AdditionalProperties>
+    </HelixTargetQueue>
     <PackageReference Include="runtime.win-$(Platform).Microsoft.DotNet.Wpf.Test" Version="$(MicrosoftDotNetWpfTestPackageVersion)" />
     <HelixCorrelationPayload Include="..\..\HelixPayload\$(Configuration)\$(Platform)" /> 
     <HelixWorkItem Include="Xaml">
