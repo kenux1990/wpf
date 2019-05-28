@@ -14,6 +14,10 @@
       <Link>DRT\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Infra.runtimeconfig.json">
+      <Link>Infra\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   
   </ItemGroup>
 
