@@ -12,7 +12,7 @@
     <IncludeDotNetCli>true</IncludeDotNetCli>
     <DotNetCliPackageType>sdk</DotNetCliPackageType>
     <!-- Set to match global.json.tools.dotnet by pre-build.ps1 -->
-    <DotNetCliVersion>$(MicrosoftNETCoreAppVersion)</DotNetCliVersion>
+    <DotNetCliVersion>$(DotNetCliVersion)</DotNetCliVersion>
     
     <EnableXUnitReporter>true</EnableXUnitReporter>
     <EnableAzurePipelinesReporter>true</EnableAzurePipelinesReporter>
