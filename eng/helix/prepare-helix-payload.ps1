@@ -46,3 +46,4 @@ CopyFolderStructure $drtArtifactsLocation $drtPayloadLocation
 # Copy scripts
 Copy-Item "eng\helix\configure-helix-machine.ps1" $payloadDir
 Copy-Item "eng\helix\runtests.ps1" $payloadDir
+Copy-Item "eng\helix\runtests.cmd" $payloadDir
