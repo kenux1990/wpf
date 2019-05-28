@@ -43,12 +43,6 @@ $drtArtifactsLocation = [System.IO.Path]::Combine($env:BUILD_SOURCESDIRECTORY, "
 $drtPayloadLocation = Join-Path $payloadDir "Test\DRT"
 CopyFolderStructure $drtArtifactsLocation $drtPayloadLocation
 
-# Copy runtime config files so that the test infra will run
-$infraArtifactsLocation = [System.IO.Path]::Combine($env:BUILD_SOURCESDIRECTORY, "artifacts\test", $configuration, $platform, "Test\Infra")
-$infraPayloadLocation = Join-Path $payloadDir "Test\Infra"
-Copy-Item "$infraArtifactsLocation\Infra.runtimeconfig.json" "$infraPayloadLocation\QualityVaultFrontEnd.runtimeconfig.json"
-Copy-Item "$infraArtifactsLocation\Infra.runtimeconfig.json" "$infraPayloadLocation\Sti.runtimeconfig.json"
-
 # Copy scripts
 Copy-Item "eng\helix\configure-helix-machine.ps1" $payloadDir
 Copy-Item "eng\helix\runtests.ps1" $payloadDir
