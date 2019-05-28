@@ -1,6 +1,6 @@
 [CmdLetBinding()]
 Param(
-    [string]$area
+    [string]$command
 )
 
 # Configure the machine before running tests
@@ -10,7 +10,7 @@ Param(
 $testLocation = Join-Path (Split-Path -Parent $script:MyInvocation.MyCommand.Path) "Test"
 if (Test-Path "$testLocation\rundrts.cmd")
 {
-    Invoke-Expression "$testLocation\rundrts.cmd /Area=$area"
+    Invoke-Expression "$testLocation\rundrts.cmd $command"
 }
 
 # We can use $env:HELIX_PYTHONPATH $env:HELIX_SCRIPT_ROOT\upload_result.py to upload any QV specific logs and/or screenshots that we are interested in.

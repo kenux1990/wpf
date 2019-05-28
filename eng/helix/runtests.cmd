@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy ByPass -NoProfile -command "& """%~dp0\runtests.ps1 %*"""
