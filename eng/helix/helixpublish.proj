@@ -10,7 +10,7 @@
     </RestoreSources>
 
     <IncludeDotNetCli>true</IncludeDotNetCli>
-    <DotNetCliPackageType>runtime</DotNetCliPackageType>
+    <DotNetCliPackageType>sdk</DotNetCliPackageType>
     <!-- Set to match global.json.tools.dotnet by pre-build.ps1 -->
     <DotNetCliVersion>$(MicrosoftNETCoreAppVersion)</DotNetCliVersion>
     
