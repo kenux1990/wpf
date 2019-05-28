@@ -13,6 +13,8 @@
     <DotNetCliPackageType>sdk</DotNetCliPackageType>
     <!-- Set to match global.json.tools.dotnet by pre-build.ps1 -->
     <DotNetCliVersion>$(DotNetCliVersion)</DotNetCliVersion>
+    <DotNetCliRuntime>win-x86</RuntimeIdentifier>
+    <DotNetCliRuntime Condition="'$(Platform)' == 'x64'">win-x64</RuntimeIdentifier>
     
     <EnableXUnitReporter>true</EnableXUnitReporter>
     <EnableAzurePipelinesReporter>true</EnableAzurePipelinesReporter>
@@ -30,9 +32,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-     <HelixTargetQueue Include="Windows.10.Amd64.Open">
-      <AdditionalProperties>Platform=x64</AdditionalProperties>
-    </HelixTargetQueue>
     <PackageReference Include="runtime.win-$(Platform).Microsoft.DotNet.Wpf.Test" Version="$(MicrosoftDotNetWpfTestPackageVersion)" />
     <HelixCorrelationPayload Include="..\..\HelixPayload\$(Configuration)\$(Platform)" /> 
     <HelixWorkItem Include="Xaml">
