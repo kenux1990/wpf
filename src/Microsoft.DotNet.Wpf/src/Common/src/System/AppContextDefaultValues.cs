@@ -65,6 +65,10 @@ namespace System
             }
 
             // If we don't have a TFM then we should default to the .NET Framework 4.8+ behavior where all quirks are turned on.
+            // For .NET Core 3.0, the result would be something like this: 
+            //      identifier = ".NETCore";
+            //      version = 30000;
+            //      profile = string.Empty;
             if (!TryParseFrameworkName(targetFrameworkMoniker, out identifier, out version, out profile))
             {
                 // If we want to use the latest behavior it is enough to set the value of the switch to string.Empty.
@@ -72,15 +76,9 @@ namespace System
                 // identifier we just set to decide which switches to turn on. By having an empty string as the 
                 // identifier we are simply saying -- don't turn on any switches, and we are going to get the latest
                 // behavior for all the switches
+                // 
+                // In practices, this may not work reliably due to the lack of targetFrameworkMoniker information.
                 identifier = string.Empty;
-
-                //identifier = ".NETCore";
-                //version = 30000;
-                //profile = string.Empty;
-            }
-            else
-            {
-
             }
         }
 

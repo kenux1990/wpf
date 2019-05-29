@@ -44,7 +44,19 @@ namespace System
 
                         break;
                     }
+                case ".NETCore":
+                    {
+                        InitializeNetFrameworkAppContextSwitchDefaults();
+                    }
+                    break;
             }
+        }
+
+        private static void InitializeNetFrameworkAppContextSwitchDefaults()
+        {
+            LocalAppContext.DefineSwitchDefault(CoreAppContextSwitches.DoNotScaleForDpiChangesSwitchName, false);
+            LocalAppContext.DefineSwitchDefault(CoreAppContextSwitches.OverrideExceptionWithNullReferenceExceptionName, false);
+            LocalAppContext.DefineSwitchDefault(CoreAppContextSwitches.DoNotUsePresentationDpiCapabilityTier2OrGreaterSwitchName, false);
         }
     }
 #pragma warning restore 436

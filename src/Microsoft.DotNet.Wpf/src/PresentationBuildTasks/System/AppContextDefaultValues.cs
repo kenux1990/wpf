@@ -28,7 +28,18 @@ namespace System
 
                         break;
                     }
+
+                case ".NETCore":
+                    {
+                        InitializeNetFrameworkAppContextSwitchDefaults();
+                    }
+                    break;
             }
+        }
+
+        private static void InitializeNetFrameworkAppContextSwitchDefaults()
+        {
+            LocalAppContext.DefineSwitchDefault(BuildTasksAppContextSwitches.DoNotUseSha256ForMarkupCompilerChecksumAlgorithmSwitchName, false);
         }
     }
 #pragma warning restore 436
