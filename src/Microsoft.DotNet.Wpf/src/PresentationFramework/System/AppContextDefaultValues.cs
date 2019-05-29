@@ -2,13 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-﻿//---------------------------------------------------------------------------
-//
-
-//
-// File: AppContextDefaultValues.cs
-//---------------------------------------------------------------------------
-
 using MS.Internal;
 
 namespace System
@@ -29,7 +22,7 @@ namespace System
             // Because this was realized after we shipped, we are going to disable the warning for this switch.
 #pragma warning disable BCL0012
 
-            // The standard behavior is to draw Text/PasswordBox selections via the adorner.
+            // The standard behavior is to draw Text/PasswordBox selections via the Adorner.
             // We want this to always be the case unless it is explicitly changed, regardless of .NET target version.
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.UseAdornerForTextboxSelectionRenderingSwitchName, true);
 #pragma warning restore BCL0012
@@ -63,13 +56,13 @@ namespace System
 
                 case ".NETCore":
                     {
-                        InitializeNetFrameworkAppContextSwitchDefaults();
+                        InitializeNetFxSwitchDefaultsForNetCoreRuntime();
                     }
                     break;
             }
         }
 
-        private static void InitializeNetFrameworkAppContextSwitchDefaults()
+        private static void InitializeNetFxSwitchDefaultsForNetCoreRuntime()
         {
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.DoNotApplyLayoutRoundingToMarginsAndBorderThicknessSwitchName, false);
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.GridStarDefinitionsCanExceedAvailableSpaceSwitchName, false);
@@ -77,10 +70,13 @@ namespace System
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.DoNotUseFollowParentWhenBindingToADODataRelationSwitchName, false);
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.IListIndexerHidesCustomIndexerSwitchName, false);
 
-            LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.UseAdornerForTextboxSelectionRenderingSwitchName, false);
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.AppendLocalAssemblyVersionForSourceUriSwitchName, false);
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.KeyboardNavigationFromHyperlinkInItemsControlIsNotRelativeToFocusedElementSwitchName, false);
             LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.ItemAutomationPeerKeepsItsItemAliveSwitchName, false);
+
+            // UseAdornerForTextboxSelectionRenderingSwitchName is always true, i.e., disabled by default. 
+            // Do not initialized this again - this was initialized earlier in PopulateDefaultValuesPartial unconditionally.
+            // LocalAppContext.DefineSwitchDefault(FrameworkAppContextSwitches.UseAdornerForTextboxSelectionRenderingSwitchName, true);
         }
     }
 

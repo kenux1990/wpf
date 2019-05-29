@@ -2,13 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-﻿//---------------------------------------------------------------------------
-//
-
-// 
-// File: AppContextDefaultValues.cs
-//---------------------------------------------------------------------------
-
 using System.Windows;
 using MS.Internal;
 
@@ -46,13 +39,13 @@ namespace System
                     }
                 case ".NETCore":
                     {
-                        InitializeNetFrameworkAppContextSwitchDefaults();
+                        InitializeNetFxSwitchDefaultsForNetCoreRuntime();
                     }
                     break;
             }
         }
 
-        private static void InitializeNetFrameworkAppContextSwitchDefaults()
+        private static void InitializeNetFxSwitchDefaultsForNetCoreRuntime()
         {
             LocalAppContext.DefineSwitchDefault(CoreAppContextSwitches.DoNotScaleForDpiChangesSwitchName, false);
             LocalAppContext.DefineSwitchDefault(CoreAppContextSwitches.OverrideExceptionWithNullReferenceExceptionName, false);

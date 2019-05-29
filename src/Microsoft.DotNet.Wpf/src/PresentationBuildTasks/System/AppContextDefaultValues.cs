@@ -31,13 +31,13 @@ namespace System
 
                 case ".NETCore":
                     {
-                        InitializeNetFrameworkAppContextSwitchDefaults();
+                        InitializeNetFxSwitchDefaultsForNetCoreRuntime();
                     }
                     break;
             }
         }
 
-        private static void InitializeNetFrameworkAppContextSwitchDefaults()
+        private static void InitializeNetFxSwitchDefaultsForNetCoreRuntime()
         {
             LocalAppContext.DefineSwitchDefault(BuildTasksAppContextSwitches.DoNotUseSha256ForMarkupCompilerChecksumAlgorithmSwitchName, false);
         }
