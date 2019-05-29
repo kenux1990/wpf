@@ -197,7 +197,7 @@ namespace System.Windows
                     }
                     break;
 
-                case ".NETCore":
+                case ".NETCoreApp":
                     {
                         LocalAppContext.DefineSwitchDefault(UseLegacyAccessibilityFeaturesSwitchName, false);
                         LocalAppContext.DefineSwitchDefault(UseLegacyAccessibilityFeatures2SwitchName, false);

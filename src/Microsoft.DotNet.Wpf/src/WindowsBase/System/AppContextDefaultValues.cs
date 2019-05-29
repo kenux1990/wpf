@@ -39,7 +39,7 @@ namespace System
                     }
                     break;
 
-                case ".NETCore":
+                case ".NETCoreApp":
                     {
                         InitializeNetFxSwitchDefaultsForNetCoreRuntime();
                     }
